@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "ge.designs.design_system"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24

@@ -10,4 +10,15 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="RatingBar">
+        <attr name="maxRating" format="integer" />
+        <attr name="rating" format="float" />
+        <attr name="starSize" format="dimension" />
+        <attr name="starSpacing" format="dimension" />
+        <attr name="filledColor" format="color" />
+        <attr name="unfilledColor" format="color" />
+        <attr name="isIndicator" format="boolean" />
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+
 </resources>
