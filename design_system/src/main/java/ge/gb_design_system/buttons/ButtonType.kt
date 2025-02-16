@@ -1,4 +1,4 @@
-package ge.designs.design_system.views
+package ge.gb_design_system.buttons
 
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes

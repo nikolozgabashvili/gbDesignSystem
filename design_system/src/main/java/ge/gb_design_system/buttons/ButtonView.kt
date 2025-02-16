@@ -1,4 +1,4 @@
-package ge.designs.design_system.views
+package ge.gb_design_system.buttons
 
 import android.content.Context
 import android.util.AttributeSet
