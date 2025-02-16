@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonView">
+        <attr name="text" format="string" />
+        <attr name="loading" format="boolean" />
+        <attr name="btnEnabled" format="boolean" />
+        <attr name="btnType" format="enum">
+            <enum name="primary" value="0" />
+            <enum name="secondary" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
