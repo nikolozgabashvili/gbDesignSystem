@@ -46,7 +46,6 @@ class RatingBar @JvmOverloads constructor(
                 isIndicator = getBoolean(R.styleable.RatingBar_isIndicator, false)
                 cornerRadius = getDimension(R.styleable.RatingBar_cornerRadius, 6f)
             }
-            println(cornerRadius)
         }
         createRoundedStarPath()
     }
