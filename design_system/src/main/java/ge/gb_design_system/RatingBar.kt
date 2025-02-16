@@ -21,7 +21,11 @@ class RatingBar @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     private var maxRating = 5
-    private var currentRating = 0f
+    var currentRating = 0f
+        set(value) {
+            field = value.coerceIn(0f, maxRating.toFloat())
+            invalidate()
+        }
     private var starSize = 40f
     private var spacing = 8f
     private var filledColor = Color.WHITE
@@ -31,7 +35,6 @@ class RatingBar @JvmOverloads constructor(
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var starPath = Path()
-
 
 
     init {
@@ -64,14 +67,18 @@ class RatingBar @JvmOverloads constructor(
             val outerAngle = Math.PI * (0.5 + i * 0.4)
             val innerAngle = Math.PI * (0.5 + 0.2 + i * 0.4)
 
-            outerPoints.add(PointF(
-                (centerX + outerRadius * cos(outerAngle)).toFloat(),
-                (centerY - outerRadius * sin(outerAngle)).toFloat()
-            ))
-            innerPoints.add(PointF(
-                (centerX + innerRadius * cos(innerAngle)).toFloat(),
-                (centerY - innerRadius * sin(innerAngle)).toFloat()
-            ))
+            outerPoints.add(
+                PointF(
+                    (centerX + outerRadius * cos(outerAngle)).toFloat(),
+                    (centerY - outerRadius * sin(outerAngle)).toFloat()
+                )
+            )
+            innerPoints.add(
+                PointF(
+                    (centerX + innerRadius * cos(innerAngle)).toFloat(),
+                    (centerY - innerRadius * sin(innerAngle)).toFloat()
+                )
+            )
         }
 
         starPath.moveTo(outerPoints[0].x, outerPoints[0].y)
@@ -124,10 +131,4 @@ class RatingBar @JvmOverloads constructor(
         }
     }
 
-    fun setRating(rating: Float) {
-        currentRating = rating.coerceIn(0f, maxRating.toFloat())
-        invalidate()
-    }
-
-    fun getRating(): Float = currentRating
 }
